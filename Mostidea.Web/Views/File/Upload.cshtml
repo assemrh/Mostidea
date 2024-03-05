@@ -11,8 +11,10 @@
                         {
                             <div class="alert alert-danger">@ViewBag.Error</div>
                         }
-                        <label for="file">Dosya Seçin:</label>
-                        <input type="file" name="file" id="file" class="form-control-file" accept=".png, .jpg, .jpeg, .txt, .pdf, .doc, .docx"  />
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Dosya Seçin:</label>
+                            <input class ="form-control" type="file" name="file" id="formFile"  accept=".png, .jpg, .jpeg, .txt, .pdf, .doc, .docx" />
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Kaydet</button>
                 </form>
