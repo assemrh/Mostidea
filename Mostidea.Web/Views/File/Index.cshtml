@@ -1,0 +1,45 @@
+﻿@using Humanizer.Bytes;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IReadOnlyList<FileModel>
+<main role="main">
+    <div class="container pb-5 pt-3">
+        <div class="row justify-content-between">
+            
+            <div class="col-md-12">
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-success">@ViewBag.Message</div>
+                }
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">File Name</th>
+                            <th scope="col">FileSize</th>
+                            <th scope="col">Uploaded By</th>
+                            <th scope="col">UploadDate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <th scope="row">@(i+1)</th>
+                                <td>@Model[i].FileName</td>
+                                <td>@ByteSize.FromBytes(Model[i].FileSize).ToString()</td>
+                                <td>@Model[i].ApplicationUser?.NormalizedUserName</td>
+                                <td>@Model[i].UploadDate</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+

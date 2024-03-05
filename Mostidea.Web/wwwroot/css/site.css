@@ -1,0 +1,82 @@
+:root {
+    --rich-black: #0B101Eff;
+    --english-violet: #4E495Fff;
+    --bistre: #453021ff;
+    --dim-gray: #656261ff;
+    --raisin-black: #1B1E2Aff;
+}
+
+header {
+    background-color: var(--rich-black);
+    color: var(--dim-gray);
+}
+
+    header a {
+        color: white !important;
+    }
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    /*  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+*/
+    box-shadow: 0
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+.text-bg-dark {
+    color: #fff !important;
+    background-color: RGBA(33, 37, 41, var(--bs-bg-opacity, 1)) !important;
+}
+
+.glassy {
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.6px);
+    -webkit-backdrop-filter: blur(8.6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+main:has(.login-section), main:has(.register-section ) {
+    padding-block: 8rem;
+    background-image: url('https://mostideayazilim.b-cdn.net/wp-content/uploads/2024/01/high-angle-man-working-laptop-2048x1365.jpg');
+}
+
+.login-section .input-group, .register-section .input-group {
+    border-color: var(--bistre);
+}
+
+    .login-section .input-group ::placeholder, .register-section .input-group ::placeholder {
+        color: var(--bs-body-color) !important;
+    }
+
+.login-section .input-group, .register-section .input-group {
+    border-color: var(--bistre) !important;
+}
+
+.login-section button, .register-section button {
+    border: 0;
+    border-radius: 5rem;
+    border-color: var(--bistre) !important;
+        background-color: var(--rich-black);
+    color: white;
+}
+    .login-section button:hover, .register-section button:hover {
+        background-color: var(--raisin-black);
+    }

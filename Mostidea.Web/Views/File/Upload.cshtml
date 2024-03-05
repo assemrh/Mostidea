@@ -1,0 +1,25 @@
+﻿
+@model IFormFile
+
+<main role="main">
+    <div class="container pb-5 pt-3">
+        <div class="row justify-content-between">
+            <div class="col-md-12">
+                <form asp-action="Upload" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-danger">@ViewBag.Error</div>
+                        }
+                        <label for="file">Dosya Seçin:</label>
+                        <input type="file" name="file" id="file" class="form-control-file" accept=".png, .jpg, .jpeg, .txt, .pdf, .doc, .docx"  />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+

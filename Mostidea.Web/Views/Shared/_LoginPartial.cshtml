@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Mostidea.Domain.Entities;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+    <div class="dropdown text-end text-bg-dark">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+@*             @foreach (var item in User.Claims)
+            {
+                <p>@item.Value</p>
+            } *@
+            </a>
+        <ul class="dropdown-menu text-small  text-bg-dark">
+                <li>
+                    <a class="dropdown-item" asp-area="" asp-controller="File" asp-action="Index">Files</a>
+                </li>
+
+
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
+@*         <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
+        </li> *@
+    }
+    else
+    {
+        <div class="col-md-3 text-end">
+        <a class="btn btn-outline-primary me-2" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        <a type="button" class="btn btn-primary" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </div>
+@*         <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li> *@
+    }
